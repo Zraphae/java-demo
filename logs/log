@@ -1,0 +1,62 @@
+2018-01-16 16:06:44 INFO  App:36 - start thread finished main, imgPath: /test/imgPath1
+2018-01-16 16:06:44 INFO  App:27 - imgPath: /test/imgPath1
+2018-01-16 16:06:44 INFO  App:27 - imgPath: /test/imgPath2
+2018-01-16 16:06:44 INFO  App:36 - start thread finished main, imgPath: /test/imgPath2
+2018-01-16 16:06:45 INFO  App:27 - imgPath: /test/imgPath1
+2018-01-16 16:06:45 INFO  App:27 - imgPath: /test/imgPath2
+2018-01-16 16:06:46 INFO  App:27 - imgPath: /test/imgPath1
+2018-01-16 16:06:46 INFO  App:27 - imgPath: /test/imgPath2
+2018-01-16 16:06:47 INFO  App:27 - imgPath: /test/imgPath1
+2018-01-16 16:06:47 INFO  App:27 - imgPath: /test/imgPath2
+2018-01-16 16:06:48 INFO  App:27 - imgPath: /test/imgPath1
+2018-01-16 16:06:48 INFO  App:27 - imgPath: /test/imgPath2
+2018-01-16 16:06:49 INFO  App:27 - imgPath: /test/imgPath1
+2018-01-16 16:06:49 INFO  App:27 - imgPath: /test/imgPath2
+2018-01-16 16:06:50 INFO  App:27 - imgPath: /test/imgPath1
+2018-01-16 16:06:50 INFO  App:27 - imgPath: /test/imgPath2
+2018-01-16 16:06:51 INFO  App:27 - imgPath: /test/imgPath1
+2018-01-16 16:06:51 INFO  App:27 - imgPath: /test/imgPath2
+2018-01-16 16:06:52 INFO  App:27 - imgPath: /test/imgPath1
+2018-01-16 16:06:52 INFO  App:27 - imgPath: /test/imgPath2
+2018-01-16 16:06:53 INFO  App:27 - imgPath: /test/imgPath1
+2018-01-16 16:06:53 INFO  App:27 - imgPath: /test/imgPath2
+2018-01-16 16:12:47 INFO  App:10 - class loader for HashMap: null
+2018-01-16 16:12:47 INFO  App:11 - class loader for this class: jdk.internal.loader.ClassLoaders$AppClassLoader@726f3b58
+2018-01-16 16:14:31 INFO  App:15 - class loader for HashMap: null
+2018-01-16 16:14:31 INFO  App:16 - class loader for this class: jdk.internal.loader.ClassLoaders$AppClassLoader@726f3b58
+2018-01-16 17:00:19 INFO  MyClassLoad:82 - Loading Class 'cn.enn.test.classloader.Foo'
+2018-01-16 17:00:19 INFO  MyClassLoad:84 - Loading Class using CCLoader
+2018-01-16 17:00:19 INFO  MyClassLoad:82 - Loading Class 'java.lang.Object'
+2018-01-16 17:00:19 INFO  MyClassLoad:82 - Loading Class 'java.lang.String'
+2018-01-16 17:00:19 INFO  MyClassLoad:82 - Loading Class 'java.lang.Exception'
+2018-01-16 17:00:19 INFO  MyClassLoad:82 - Loading Class 'java.lang.System'
+2018-01-16 17:00:19 INFO  MyClassLoad:82 - Loading Class 'java.lang.StringBuilder'
+2018-01-16 17:00:19 INFO  MyClassLoad:82 - Loading Class 'java.io.PrintStream'
+2018-01-16 17:00:19 INFO  MyClassLoad:82 - Loading Class 'cn.enn.test.classloader.Bar'
+2018-01-16 17:00:19 INFO  MyClassLoad:84 - Loading Class using CCLoader
+2018-01-16 17:00:19 INFO  MyClassLoad:82 - Loading Class 'java.lang.Class'
+2018-01-16 17:38:25 INFO  MyClassLoad:82 - Loading Class 'cn.enn.test.classloader.Foo'
+2018-01-16 17:38:25 INFO  MyClassLoad:84 - Loading Class using CCLoader
+2018-01-16 17:38:25 INFO  MyClassLoad:82 - Loading Class 'java.lang.Object'
+2018-01-16 17:38:25 INFO  MyClassLoad:82 - Loading Class 'java.lang.String'
+2018-01-16 17:38:25 INFO  MyClassLoad:82 - Loading Class 'java.lang.Exception'
+2018-01-16 17:38:25 INFO  MyClassLoad:82 - Loading Class 'java.lang.System'
+2018-01-16 17:38:25 INFO  MyClassLoad:82 - Loading Class 'java.lang.StringBuilder'
+2018-01-16 17:38:25 INFO  MyClassLoad:82 - Loading Class 'java.io.PrintStream'
+2018-01-16 17:38:25 INFO  MyClassLoad:82 - Loading Class 'cn.enn.test.classloader.Bar'
+2018-01-16 17:38:25 INFO  MyClassLoad:84 - Loading Class using CCLoader
+2018-01-16 17:38:25 INFO  MyClassLoad:82 - Loading Class 'java.lang.Class'
+2018-01-16 17:41:12 INFO  MyClassLoad:82 - Loading Class 'cn.enn.test.classloader.Foo'
+2018-01-16 17:41:12 INFO  MyClassLoad:84 - Loading Class using MyClassLoad
+2018-01-16 17:41:12 INFO  MyClassLoad:82 - Loading Class 'java.lang.Object'
+2018-01-16 17:41:12 INFO  MyClassLoad:82 - Loading Class 'java.lang.String'
+2018-01-16 17:41:12 INFO  MyClassLoad:82 - Loading Class 'java.lang.Exception'
+2018-01-16 17:41:12 INFO  MyClassLoad:82 - Loading Class 'org.slf4j.LoggerFactory'
+2018-01-16 17:41:12 INFO  MyClassLoad:82 - Loading Class 'org.slf4j.Logger'
+2018-01-16 17:41:12 INFO  Foo:9 - Foo Constructor >>> 1212 1313
+2018-01-16 17:41:12 INFO  MyClassLoad:82 - Loading Class 'cn.enn.test.classloader.Bar'
+2018-01-16 17:41:12 INFO  MyClassLoad:84 - Loading Class using MyClassLoad
+2018-01-16 17:41:12 INFO  Bar:9 - Bar Constructor >>> 1212 1313
+2018-01-16 17:41:12 INFO  MyClassLoad:82 - Loading Class 'java.lang.Class'
+2018-01-16 17:41:12 INFO  Bar:13 - Bar ClassLoader: cn.enn.test.classloader.MyClassLoad@593634ad
+2018-01-16 17:41:12 INFO  Foo:15 - Foo ClassLoader: cn.enn.test.classloader.MyClassLoad@593634ad
