@@ -1,42 +1,50 @@
 package cn.enn.test;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.io.File;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Properties;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.ClassPathUtils;
+import org.apache.commons.net.util.Base64;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class App {
+	
+	    public static void test() {
+	    	
+	    	
+	        Map<String, String> map = System.getenv();
+	        System.out.println(map.get("ENN_FACEID_HOME"));
+	    }
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		test();
+//		decode();
 		
-		final List<String> imgPaths = Arrays.asList("/test/imgPath1", "/test/imgPath2");
-		final int nThreads = 2;
-		ExecutorService pool = Executors.newFixedThreadPool(nThreads);
-
-		for (int i = 0; i < nThreads; i++) {
-			final String imgPath = imgPaths.get(i);
-			pool.submit(new Runnable() {
-				
-				@Override
-				public void run() {
-					
-					for(int i =0; i< 10; i++) {
-						log.info("imgPath: {}", imgPath);
-						try {
-							Thread.sleep(1000);
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-					}
-				}
-			});
-			log.info("start thread finished {}, imgPath: {}", Thread.currentThread().getName(), imgPath);
+	}
+	
+	public static void encode() throws IOException {
+		File imgPath = new File("D:/testspace/imgs/gas");
+		int count = 0;
+		for(File imgFile : imgPath.listFiles()) {
+			byte[] imgArr = FileUtils.readFileToByteArray(imgFile);
+			String imgBase64Str = Base64.encodeBase64URLSafeString(imgArr);
+			FileUtils.writeStringToFile(new File("D:/testspace/" + count++), imgBase64Str);
 		}
-		
-		pool.shutdown();
+		log.info("task has been finished");
+	}
+	
+	public static void decode() throws IOException {
+		String readFileToString = FileUtils.readFileToString(new File("D:/1.jpg"));
+		byte[] decodeBase64 = Base64.decodeBase64(readFileToString);
+		FileUtils.writeByteArrayToFile(new File("D:/2.jpg"), decodeBase64);
+		log.info("task has been finished");
 	}
 
 }
