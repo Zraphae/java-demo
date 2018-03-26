@@ -1,6 +1,5 @@
 package cn.enn.test.nio.server;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
@@ -157,20 +156,14 @@ public class Server {
 	@SuppressWarnings("unchecked")
 	private <T> T receiveData(SocketChannel sc, Class<T> clazz) throws IOException {
 		T t = null;
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		ByteBuffer buffer = ByteBuffer.allocate(1024);
 
-		byte[] bytes;
-		int size = 0;
-		while ((size = sc.read(buffer)) >= 0) {
-			buffer.flip();
-			bytes = new byte[size];
-			buffer.get(bytes);
-			baos.write(bytes);
-			buffer.clear();
+		int bytesRead = sc.read(buffer);
+		while(bytesRead != -1) {
+			bytesRead = sc.read(buffer);
 		}
-		bytes = baos.toByteArray();
-		t = (T) SerializationUtils.deserialize(bytes);
+		buffer.flip();
+		t = (T) SerializationUtils.deserialize(buffer.array());
 		return t;
 	}
 

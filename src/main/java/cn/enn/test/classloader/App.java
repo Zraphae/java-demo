@@ -1,7 +1,6 @@
 package cn.enn.test.classloader;
 
 import java.lang.reflect.Method;
-import java.util.Arrays;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -10,7 +9,7 @@ public class App {
 
 	public static void main(String[] args) throws Exception {
 
-		args = (String[]) Arrays.asList("cn.enn.test.classloader.Foo", "1212", "1313").toArray();
+		args = new String[] {"cn.enn.test.classloader.Foo", "1212", "1313"};
 		String progClass = args[0];
 		String progArgs[] = new String[args.length - 1];
 		System.arraycopy(args, 1, progArgs, 0, progArgs.length);
