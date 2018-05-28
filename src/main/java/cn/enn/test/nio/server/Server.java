@@ -159,7 +159,7 @@ public class Server {
 		ByteBuffer buffer = ByteBuffer.allocate(1024);
 
 		int bytesRead = sc.read(buffer);
-		while(bytesRead != -1) {
+		while (bytesRead != -1) {
 			bytesRead = sc.read(buffer);
 		}
 		buffer.flip();
