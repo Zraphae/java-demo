@@ -24,11 +24,11 @@ public class App {
 	public static void main(String[] args) throws IOException {
 
 		// testOptional();
-		testPreconditions();
+//		testPreconditions();
 		// testJoiner();
 		// testSplitter();
 		// testLoadingCache();
-		// testCallBack();
+		 testCallBack();
 		
 	}
 
@@ -122,9 +122,12 @@ public class App {
 
 		cache.put("java", "javavalue");
 		try {
+			TimeUnit.SECONDS.sleep(2);
 			String result = cache.get("java", () -> "hello java");
 			System.out.println(result);
 		} catch (ExecutionException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}

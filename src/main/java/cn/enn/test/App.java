@@ -3,6 +3,7 @@ package cn.enn.test;
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
+import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.net.util.Base64;
@@ -19,15 +20,28 @@ public class App {
 	}
 
 	public static void main(String[] args) throws IOException {
-		System.out.println("==============");
-		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-			test();
-		}));
-
-		test();
-		decode();
+		
+		for (int a = 0; a < 10 ; a++) {
+			new Thread(()->
+				log.info("== {}", threadLocalRam.get())
+			).start(); 
+		}
+		//sdf
+//		System.out.println("==============");
+//		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+//			test();
+//		}));
+//
+//		test();
+//		decode();
 
 	}
+	
+	private static Random createRandom() {
+		return new Random();
+	}
+	
+	public static ThreadLocal<Random> threadLocalRam = ThreadLocal.withInitial(App::createRandom);
 
 	public static void encode() throws IOException {
 		File imgPath = new File("D:/testspace/imgs/gas");

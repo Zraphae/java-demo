@@ -23,8 +23,9 @@ public class App {
 
 		// Below method is used to check that the Foo is getting loaded
 		// by our custom class loader i.e MyClassLoad
+		Object instance = clas.newInstance();
 		Method printCL = clas.getMethod("printCL");
-		printCL.invoke(null, new Object[0]);
+		printCL.invoke(instance, new Object[0]);
 	}
 
 	public static void test1() {

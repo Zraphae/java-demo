@@ -11,7 +11,7 @@ public class Foo {
 		bar.printCL();
 	}
 
-	public static void printCL() {
+	public void printCL() {
 		log.info("Foo ClassLoader: {}", Foo.class.getClassLoader());
 	}
 }
