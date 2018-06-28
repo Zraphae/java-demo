@@ -27,6 +27,7 @@ public class FileChannelApp {
 			}
 			log.info("file size: {}", fileChannel.size());
 
+
 //			int readByte;
 //			while((readByte = fileChannel.read(buffer)) > 0) {
 //				log.info("read byte size: {}", readByte);
