@@ -29,10 +29,7 @@ public class Client {
 	public <T> T refer(Class<T> clazz) {
 
 		return (T) Proxy.newProxyInstance(clazz.getClassLoader(), (Class<?>[]) Arrays.asList(clazz).toArray(),
-				new InvocationHandler() {
-
-					@Override
-					public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+				(Object proxy, Method method, Object[] args) -> {
 
 						String methodName = method.getName();
 						Class<?>[] parameterTypes = method.getParameterTypes();
@@ -45,11 +42,11 @@ public class Client {
 							sc = SocketChannel.open(new InetSocketAddress(ip, port));
 							sc.configureBlocking(false);
 							boolean connected = sc.isConnected();
-							log.info("========>connected:" + connected);
+							log.info("connected: {}", connected);
 							if (connected) {
 								sendData(sc, methodParam);
 								receiveData = receiveData(sc);
-								log.info((String) receiveData);
+								log.info("receive data: {}", receiveData);
 							}
 						} catch (IOException e) {
 							e.printStackTrace();
@@ -64,7 +61,6 @@ public class Client {
 						}
 
 						return receiveData;
-					}
 				});
 
 	}

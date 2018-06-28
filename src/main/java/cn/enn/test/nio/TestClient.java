@@ -15,19 +15,13 @@ public class TestClient {
 		ExecutorService pool = ThreadPool.builder().build().newThreadPool();
 
 		for (int i = 0; i < 10000; i++) {
-			pool.submit(new Runnable() {
-
-				@Override
-				public void run() {
+			pool.submit(()-> {
 					HelloService service = Client.builder().ip("127.0.0.1").port(8090).build()
 							.refer(HelloService.class);
 					String result = service.hello(Thread.currentThread().getName());
-					log.info("result: " + result);
-
-				}
+					log.info("result: {}", result);
 			});
 		}
-
 		pool.shutdown();
 	}
 
