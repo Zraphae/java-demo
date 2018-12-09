@@ -1,14 +1,13 @@
 package cn.enn.test;
 
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.net.util.Base64;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Random;
-
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.net.util.Base64;
-
-import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class App {

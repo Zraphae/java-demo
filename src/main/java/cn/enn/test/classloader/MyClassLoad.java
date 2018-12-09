@@ -1,11 +1,11 @@
 package cn.enn.test.classloader;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Our Custom Class Loader to load the classes. Any class in the com.journaldev

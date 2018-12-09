@@ -1,14 +1,14 @@
 package cn.enn.test.nio2.http;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.List;
-
 import cn.enn.test.nio2.IMessageReader;
 import cn.enn.test.nio2.Message;
 import cn.enn.test.nio2.MessageBuffer;
 import cn.enn.test.nio2.Socket;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jjenkov on 18-10-2015.

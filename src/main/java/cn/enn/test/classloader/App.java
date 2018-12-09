@@ -1,8 +1,8 @@
 package cn.enn.test.classloader;
 
-import java.lang.reflect.Method;
-
 import lombok.extern.slf4j.Slf4j;
+
+import java.lang.reflect.Method;
 
 @Slf4j
 public class App {

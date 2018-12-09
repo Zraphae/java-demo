@@ -1,11 +1,5 @@
 package cn.enn.test.parquet;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Random;
-
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.log4j.Logger;
@@ -18,6 +12,12 @@ import org.apache.parquet.hadoop.ParquetWriter;
 import org.apache.parquet.hadoop.example.GroupReadSupport;
 import org.apache.parquet.schema.MessageType;
 import org.apache.parquet.schema.MessageTypeParser;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Random;
 
 public class App {
 	static Logger logger = Logger.getLogger(App.class);
@@ -52,7 +52,7 @@ public class App {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param outPath
 	 *            输出Parquet格式
 	 * @param inPath

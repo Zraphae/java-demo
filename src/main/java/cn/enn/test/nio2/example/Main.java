@@ -1,12 +1,12 @@
 package cn.enn.test.nio2.example;
 
-import java.io.IOException;
-
 import cn.enn.test.nio2.IMessageProcessor;
 import cn.enn.test.nio2.Message;
 import cn.enn.test.nio2.Server;
 import cn.enn.test.nio2.http.HttpMessageReaderFactory;
 import lombok.extern.slf4j.Slf4j;
+
+import java.io.IOException;
 
 /**
  * Created by jjenkov on 19-10-2015.
