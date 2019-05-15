@@ -9,7 +9,7 @@ public class ZkCachePathWatcherTests {
     public static void main(String[] args) throws InterruptedException {
 
 
-        PathCacheWatcher pathCacheWatcher = PathCacheWatcher.builder().watchPath("/test").build();
+        PathCacheWatcher pathCacheWatcher = PathCacheWatcher.builder().watchPath("/hbase/rs").build();
         pathCacheWatcher.start();
 
         Thread.sleep(100 * 1000L);
@@ -19,6 +19,7 @@ public class ZkCachePathWatcherTests {
         log.info("==>zkData: {}", new String(zkDataArr));
 
         pathCacheWatcher.shutdown();
+
 
     }
 }
