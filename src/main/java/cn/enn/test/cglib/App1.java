@@ -10,7 +10,7 @@ public class App1 {
 		final ReentrantLock reentrantLock = new ReentrantLock();
 		final Condition condition = reentrantLock.newCondition();
 
-		Thread thread = new Thread((Runnable) () -> {
+		Thread thread = new Thread(() -> {
 			try {
 				reentrantLock.lock();
 				System.out.println("我要等一个新信号");
@@ -24,7 +24,7 @@ public class App1 {
 
 		thread.start();
 
-		Thread thread1 = new Thread((Runnable) () -> {
+		Thread thread1 = new Thread(() -> {
 			reentrantLock.lock();
 			System.out.println("我拿到锁了");
 			try {
