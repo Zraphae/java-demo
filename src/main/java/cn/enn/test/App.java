@@ -3,6 +3,7 @@ package cn.enn.test;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.net.util.Base64;
 
 import java.io.File;
@@ -24,18 +25,22 @@ public class App {
 
 	public static void main(String[] args) throws IOException {
 
-		ArrayList<String> list = Lists.newArrayList();
-		for(int i=0; i<10; i++){
-			list.add(i+"");
-		}
 
-		log.info("===>{}", list);
-		list = testInterator(list);
-		log.info("---->{}", list);
+		ArrayList<String> strs = Lists.newArrayList();
+		strs.add("\"2031\",\"4\",\"10\",16,5,1987-10-16,\"NW\",19386,\"NW\",\"\",\"613\",13487,1348701,31650,\"MSP\",\"Minneapolis, MN\",\"MN\",\"27\",\"Minnesota\",63,11637,1163702,31637,\"FAR\",\"Fargo, ND\",\"ND\",\"38\",\"North Dakota\",66,\"1210\",\"1233\",23,23,1,1,\"1200-1259\",,\"\",\"\",,\"1320\",\"1335\",15,15,1,1,\"1300-1359\",0,\"\",0,70,62,,1,223,1,,,,,,\"\",,,,,,,,\"\",,,\"\",,,\"\",\"\",\"\",,,\"\",,,\"\",\"\",\"\",,,\"\",,,\"\",\"\",\"\",,,\"\",,,\"\",\"\",\"\",,,\"\",,,\"\",\"\"");
+		strs.add("\"2032\",\"4\",\"10\",16,5,1987-10-16,\"NW\",19386,\"NW\",\"\",\"613\",13487,1348701,31650,\"MSP\",\"Minneapolis, MN\",\"MN\",\"27\",\"Minnesota\",63,11637,1163702,31637,\"FAR\",\"Fargo, ND\",\"ND\",\"38\",\"North Dakota\",66,\"1210\",\"1233\",23,23,1,1,\"1200-1259\",,\"\",\"\",,\"1320\",\"1335\",15,15,1,1,\"1300-1359\",0,\"\",0,70,62,,1,223,1,,,,,,\"\",,,,,,,,\"\",,,\"\",,,\"\",\"\",\"\",,,\"\",,,\"\",\"\",\"\",,,\"\",,,\"\",\"\",\"\",,,\"\",,,\"\",\"\",\"\",,,\"\",,,\"\",\"\"");
+		String join = String.join("\n", strs);
+		log.info("=====>{}", join);
+
+		String csvContent = FileUtils.readFileToString(new File("/Users/zhaopeng/Downloads/1.csv"));
+		log.info("=====>{}", csvContent);
+
+		boolean equals = StringUtils.equals(join, csvContent);
+		log.info("=====>{}", equals);
 
 	}
 
-	private static ArrayList<String> testInterator(ArrayList<String> list) {
+	private static ArrayList<String> testIterator(ArrayList<String> list) {
 
 		Iterator<String> iterator = list.iterator();
 		while (iterator.hasNext()){
