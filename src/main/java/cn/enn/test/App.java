@@ -1,13 +1,17 @@
 package cn.enn.test;
 
+import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.net.util.Base64;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 @Slf4j
 public class App {
@@ -19,23 +23,30 @@ public class App {
 	}
 
 	public static void main(String[] args) throws IOException {
-		
-		for (int a = 0; a < 10 ; a++) {
-			new Thread(()->
-				log.info("== {}", threadLocalRam.get())
-			).start(); 
+
+		ArrayList<String> list = Lists.newArrayList();
+		for(int i=0; i<10; i++){
+			list.add(i+"");
 		}
-		//sdf
-//		System.out.println("==============");
-//		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-//			test();
-//		}));
-//
-//		test();
-//		decode();
+
+		log.info("===>{}", list);
+		list = testInterator(list);
+		log.info("---->{}", list);
 
 	}
-	
+
+	private static ArrayList<String> testInterator(ArrayList<String> list) {
+
+		Iterator<String> iterator = list.iterator();
+		while (iterator.hasNext()){
+			String next = iterator.next();
+			if(next.equals("2")){
+				iterator.remove();
+			}
+		}
+		return list;
+	}
+
 	private static Random createRandom() {
 		return new Random();
 	}
