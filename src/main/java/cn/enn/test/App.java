@@ -32,12 +32,6 @@ public class App {
 		String join = String.join("\n", strs);
 		log.info("=====>{}", join);
 
-		String csvContent = FileUtils.readFileToString(new File("/Users/zhaopeng/Downloads/1.csv"));
-		log.info("=====>{}", csvContent);
-
-		boolean equals = StringUtils.equals(join, csvContent);
-		log.info("=====>{}", equals);
-
 	}
 
 	private static ArrayList<String> testIterator(ArrayList<String> list) {
