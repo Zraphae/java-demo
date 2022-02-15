@@ -9,7 +9,6 @@ public class App1 {
 		
 		final ReentrantLock reentrantLock = new ReentrantLock();
 		final Condition condition = reentrantLock.newCondition();
-
 		Thread thread = new Thread(() -> {
 			try {
 				reentrantLock.lock();
